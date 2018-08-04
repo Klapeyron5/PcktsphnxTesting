@@ -96,10 +96,10 @@ cmn_prior_shiftwin(cmn_t *cmn)
     mfcc_t sf;
     int32 i;
 
-    E_INFO("cmn_prior_update: from < ");
+  /*  E_INFO("cmn_prior_update: from < "); //TODO commented by nik
     for (i = 0; i < cmn->veclen; i++)
         E_INFOCONT("%5.2f ", MFCC2FLOAT(cmn->cmn_mean[i]));
-    E_INFOCONT(">\n");
+    E_INFOCONT(">\n");*/
 
     sf = FLOAT2MFCC(1.0) / cmn->nframe;
     for (i = 0; i < cmn->veclen; i++)
@@ -113,10 +113,10 @@ cmn_prior_shiftwin(cmn_t *cmn)
         cmn->nframe = CMN_WIN;
     }
 
-    E_INFO("cmn_prior_update: to   < ");
+/*    E_INFO("cmn_prior_update: to   < "); //TODO commented by nik
     for (i = 0; i < cmn->veclen; i++)
         E_INFOCONT("%5.2f ", MFCC2FLOAT(cmn->cmn_mean[i]));
-    E_INFOCONT(">\n");
+    E_INFOCONT(">\n");*/
 }
 
 void
@@ -128,10 +128,10 @@ cmn_prior_update(cmn_t *cmn)
     if (cmn->nframe <= 0)
         return;
 
-    E_INFO("cmn_prior_update: from < ");
+/*    E_INFO("cmn_prior_update: from < "); //TODO commented by nik
     for (i = 0; i < cmn->veclen; i++)
         E_INFOCONT("%5.2f ", MFCC2FLOAT(cmn->cmn_mean[i]));
-    E_INFOCONT(">\n");
+    E_INFOCONT(">\n");*/
 
     /* Update mean buffer */
     sf = FLOAT2MFCC(1.0) / cmn->nframe;
@@ -146,10 +146,10 @@ cmn_prior_update(cmn_t *cmn)
         cmn->nframe = CMN_WIN;
     }
 
-    E_INFO("cmn_prior_update: to   < ");
+/*    E_INFO("cmn_prior_update: to   < "); //TODO commented by nik
     for (i = 0; i < cmn->veclen; i++)
         E_INFOCONT("%5.2f ", MFCC2FLOAT(cmn->cmn_mean[i]));
-    E_INFOCONT(">\n");
+    E_INFOCONT(">\n");*/
 }
 
 void
