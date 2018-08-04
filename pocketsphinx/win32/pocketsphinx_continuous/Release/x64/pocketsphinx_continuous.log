@@ -1,0 +1,4 @@
+﻿  continuous.c
+..\..\src\programs\continuous.c(110): warning C4244: =: преобразование "float64" в "float", возможна потеря данных
+..\..\src\programs\continuous.c(175): warning C4267: =: преобразование из "size_t" в "int32"; возможна потеря данных
+  pocketsphinx_continuous.vcxproj -> C:\Adocuments\Library\Clapeyron_ind\speech rec\pocketsphinxlib\pocketsphinx\\bin\Release\x64\pocketsphinx_continuous.exe

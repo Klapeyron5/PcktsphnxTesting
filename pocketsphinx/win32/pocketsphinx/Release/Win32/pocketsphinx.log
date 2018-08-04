@@ -1,0 +1,81 @@
+﻿  acmod.c
+..\..\src\libpocketsphinx\acmod.c(188): warning C4244: =: преобразование "double" в "mfcc_t", возможна потеря данных
+..\..\src\libpocketsphinx\acmod.c(193): warning C4244: =: преобразование "double" в "mfcc_t", возможна потеря данных
+..\..\src\libpocketsphinx\acmod.c(498): warning C4018: <: несоответствие типов со знаком и без знака
+..\..\src\libpocketsphinx\acmod.c(509): warning C4018: <: несоответствие типов со знаком и без знака
+..\..\src\libpocketsphinx\acmod.c(560): warning C4018: <: несоответствие типов со знаком и без знака
+  allphone_search.c
+..\..\src\libpocketsphinx\allphone_search.c(545): warning C4244: =: преобразование "float32" в "int32", возможна потеря данных
+..\..\src\libpocketsphinx\allphone_search.c(604): warning C4244: =: преобразование "double" в "float32", возможна потеря данных
+  bin_mdef.c
+..\..\src\libpocketsphinx\bin_mdef.c(148): warning C4244: =: преобразование "int16" в "uint8", возможна потеря данных
+..\..\src\libpocketsphinx\bin_mdef.c(149): warning C4244: =: преобразование "int16" в "uint8", возможна потеря данных
+..\..\src\libpocketsphinx\bin_mdef.c(150): warning C4244: =: преобразование "int16" в "uint8", возможна потеря данных
+  blkarray_list.c
+  dict.c
+  dict2pid.c
+  fsg_history.c
+  fsg_lextree.c
+  fsg_search.c
+..\..\src\libpocketsphinx\fsg_search.c(214): warning C4244: =: преобразование "float32" в "int32", возможна потеря данных
+..\..\src\libpocketsphinx\fsg_search.c(223): warning C4244: =: преобразование "double" в "float32", возможна потеря данных
+  hmm.c
+  kws_detections.c
+  kws_search.c
+  mdef.c
+  ms_gauden.c
+  ms_mgau.c
+..\..\src\libpocketsphinx\ms_mgau.c(133): warning C4018: >: несоответствие типов со знаком и без знака
+..\..\src\libpocketsphinx\ms_mgau.c(136): warning C4018: <: несоответствие типов со знаком и без знака
+..\..\src\libpocketsphinx\ms_mgau.c(216): warning C4018: <: несоответствие типов со знаком и без знака
+..\..\src\libpocketsphinx\ms_mgau.c(224): warning C4018: <: несоответствие типов со знаком и без знака
+  ms_senone.c
+..\..\src\libpocketsphinx\ms_senone.c(118): warning C4018: <: несоответствие типов со знаком и без знака
+..\..\src\libpocketsphinx\ms_senone.c(224): warning C4018: <: несоответствие типов со знаком и без знака
+..\..\src\libpocketsphinx\ms_senone.c(225): warning C4018: <: несоответствие типов со знаком и без знака
+..\..\src\libpocketsphinx\ms_senone.c(240): warning C4018: <: несоответствие типов со знаком и без знака
+..\..\src\libpocketsphinx\ms_senone.c(314): warning C4018: <: несоответствие типов со знаком и без знака
+..\..\src\libpocketsphinx\ms_senone.c(325): warning C4018: <: несоответствие типов со знаком и без знака
+..\..\src\libpocketsphinx\ms_senone.c(376): warning C4018: <: несоответствие типов со знаком и без знака
+  ngram_search.c
+..\..\src\libpocketsphinx\ngram_search.c(93): warning C4090: функция: разные квалификаторы "const"
+..\..\src\libpocketsphinx\ngram_search.c(136): warning C4244: =: преобразование "double" в "float32", возможна потеря данных
+..\..\src\libpocketsphinx\ngram_search.c(724): warning C4244: =: преобразование "float32" в "int32", возможна потеря данных
+..\..\src\libpocketsphinx\ngram_search.c(1044): warning C4244: функция: преобразование "double" в "float32", возможна потеря данных
+..\..\src\libpocketsphinx\ngram_search.c(1189): warning C4244: =: преобразование "float32" в "int32", возможна потеря данных
+..\..\src\libpocketsphinx\ngram_search.c(1245): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+  ngram_search_fwdflat.c
+..\..\src\libpocketsphinx\ngram_search_fwdflat.c(709): warning C4244: +=: преобразование "float32" в "int32", возможна потеря данных
+  ngram_search_fwdtree.c
+  phone_loop_search.c
+..\..\src\libpocketsphinx\phone_loop_search.c(230): warning C4244: =: преобразование "float64" в "int32", возможна потеря данных
+  Создание кода...
+  Компиляция...
+  pocketsphinx.c
+..\..\src\libpocketsphinx\pocketsphinx.c(321): warning C4244: =: преобразование "float32" в "int32", возможна потеря данных
+..\..\src\libpocketsphinx\pocketsphinx.c(341): warning C4244: функция: преобразование "int32" в "float32", возможна потеря данных
+  ps_lattice.c
+..\..\src\libpocketsphinx\ps_lattice.c(452): warning C4244: инициализация: преобразование "float64" в "float32", возможна потеря данных
+..\..\src\libpocketsphinx\ps_lattice.c(1248): warning C4244: +=: преобразование "float32" в "int32", возможна потеря данных
+..\..\src\libpocketsphinx\ps_lattice.c(1291): warning C4244: +=: преобразование "float32" в "int32", возможна потеря данных
+..\..\src\libpocketsphinx\ps_lattice.c(1325): warning C4244: +=: преобразование "float32" в "int32", возможна потеря данных
+..\..\src\libpocketsphinx\ps_lattice.c(1328): warning C4244: +=: преобразование "float32" в "int32", возможна потеря данных
+..\..\src\libpocketsphinx\ps_lattice.c(1378): warning C4244: +=: преобразование "float32" в "int32", возможна потеря данных
+..\..\src\libpocketsphinx\ps_lattice.c(1400): warning C4244: =: преобразование "float32" в "int32", возможна потеря данных
+..\..\src\libpocketsphinx\ps_lattice.c(1437): warning C4244: +=: преобразование "float32" в "int32", возможна потеря данных
+..\..\src\libpocketsphinx\ps_lattice.c(1507): warning C4244: =: преобразование "float32" в "int32", возможна потеря данных
+..\..\src\libpocketsphinx\ps_lattice.c(1514): warning C4244: функция: преобразование "float32" в "int", возможна потеря данных
+..\..\src\libpocketsphinx\ps_lattice.c(1597): warning C4244: +=: преобразование "float32" в "int32", возможна потеря данных
+..\..\src\libpocketsphinx\ps_lattice.c(1682): warning C4244: +=: преобразование "float32" в "int32", возможна потеря данных
+..\..\src\libpocketsphinx\ps_lattice.c(1688): warning C4244: +=: преобразование "float32" в "int32", возможна потеря данных
+..\..\src\libpocketsphinx\ps_lattice.c(1759): warning C4244: =: преобразование "float32" в "int32", возможна потеря данных
+  ps_mllr.c
+  ptm_mgau.c
+..\..\src\libpocketsphinx\ptm_mgau.c(841): warning C4244: =: преобразование "int16" в "uint8", возможна потеря данных
+  s2_semi_mgau.c
+  tmat.c
+  vector.c
+..\..\src\libpocketsphinx\vector.c(102): warning C4244: *=: преобразование "float64" в "float32", возможна потеря данных
+  Создание кода...
+     Создается библиотека ..\..\bin\Release\Win32/pocketsphinx.lib и объект ..\..\bin\Release\Win32/pocketsphinx.exp
+  pocketsphinx.vcxproj -> C:\Adocuments\Library\Clapeyron_ind\speech rec\pocketsphinxlib\pocketsphinx\\bin\Release\Win32\pocketsphinx.dll
