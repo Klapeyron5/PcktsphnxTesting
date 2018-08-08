@@ -1,0 +1,15 @@
+#JSGF V1.0;
+
+grammar robot;
+
+<where> = (where is|where's);
+<my> = my;
+<object> = (phone|keys|wallet);
+<go> = go to the;
+<rooms> = (kitchen|hallway|livingroom);
+<call> = and call my;
+<familyMember> = (mom|dad|brother|sister);
+<come1> = come to me;
+<come2> = come here;
+
+public <query> = (<where><my><object>|<come1>|<come2>|<go><rooms>|<go><rooms><call><familyMember>);

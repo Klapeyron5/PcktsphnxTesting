@@ -258,6 +258,44 @@ sleep_msec(int32 ms)
 #endif
 }
 
+static void
+start_recognite_grammar(ad_rec_t *ad) {
+    int16 adbuf[2048];
+    uint8 utt_started, in_speech;
+    int32 k;
+    char const *hyp;
+    char const *cfg;
+	int argcc = 9;
+	char *argvv[] = {"bin/Debug/Win32/pocketsphinx_continuous.exe", "-inmic", "yes",
+		"-hmm", "model/en-us/en-us", "-dict",  "model/en-us/cmudict-en-us.dict",
+		"-jsgf", "model/grammar_robot_v0_1.jsgf"};
+	
+	config = cmd_ln_parse_r(NULL, cont_args_def, argcc, argvv, TRUE);
+	/* Handle argument file as -argfile. */
+    if (config && (cfg = cmd_ln_str_r(config, "-argfile")) != NULL) {
+        config = cmd_ln_parse_file_r(config, cont_args_def, cfg, FALSE);
+    }
+	ps_free(ps);
+	ps_default_search_args(config);
+    ps = ps_init(config);
+	
+    if (ps_start_utt(ps) < 0) // mark the start of the utterance
+        E_FATAL("Failed to start utterance\n");
+
+	for(;;) {
+        if ((k = ad_read(ad, adbuf, 2048)) < 0) // capture the number of frames in the audio buffer
+            E_FATAL("Failed to read audio\n");
+        ps_process_raw(ps, adbuf, k, FALSE, FALSE); // send the audio buffer to the pocketsphinx decoder
+        hyp = ps_get_hyp(ps, NULL ); // query pocketsphinx for "hypothesis" of decoded statement
+		if (hyp != NULL) {
+                printf("|%s|\n", hyp);
+		}
+        sleep_msec(100);
+	}
+    ad_close(ad);
+}
+
+
 /*
  * Main utterance processing loop:
  *     for (;;) {
@@ -316,6 +354,9 @@ recognize_from_microphone()
                 printf("|%s|\n", hyp);
                 fflush(stdout);
 				ps_end_utt(ps);
+
+				start_recognite_grammar(ad);
+
 				ps_start_utt(ps);
             }
 
@@ -346,35 +387,22 @@ main()//int argc, char *argv[])
     char const *cfg;
 	int argcc = 9;//11;
 	char *argvv[] = {"bin/Debug/Win32/pocketsphinx_continuous.exe", "-inmic", "yes",
-		"-hmm", "model/en-us/en-us", "-dict", "model/kwsdict.dict",//"model/en-us/cmudict-en-us.dict", 
+		"-hmm", "model/en-us/en-us", "-dict", "model/en-us/cmudict-en-us.dict", 
 		"-kws", "model/keyphrase.list"};
 		//"-keyphrase", "mighty computer", "-kws_threshold", "1e-20"};
-	E_INFO("1---------------------------------->>>>>>>>>>>>>>\n");
-	
-/*	E_INFO("----------------------------------\n");
-	for (;i < argc;i++) {
-		if (strcmp(argv[i],argvv[i])!=0) {
-			E_INFO("|%s|\n",argv[i]);
-			E_INFO("|%s|\n",argvv[i]);
-		}
-	}
-	E_INFO("----------------------------------\n");*/
 
 	config = cmd_ln_parse_r(NULL, cont_args_def, argcc, argvv, TRUE);
-	E_INFO("2---------------------------------->>>>>>>>>>>>>>\n");
 
     /* Handle argument file as -argfile. */
     if (config && (cfg = cmd_ln_str_r(config, "-argfile")) != NULL) {
         config = cmd_ln_parse_file_r(config, cont_args_def, cfg, FALSE);
     }
-	E_INFO("3---------------------------------->>>>>>>>>>>>>>\n");
 
     if (config == NULL || (cmd_ln_str_r(config, "-infile") == NULL && cmd_ln_boolean_r(config, "-inmic") == FALSE)) {
 		E_INFO("Specify '-infile <file.wav>' to recognize from file or '-inmic yes' to recognize from microphone.\n");
         cmd_ln_free_r(config);
 		return 1;
     }
-	E_INFO("4---------------------------------->>>>>>>>>>>>>>\n");
 
 	ps_default_search_args(config);
     ps = ps_init(config);
@@ -384,7 +412,6 @@ main()//int argc, char *argv[])
     }
 	
     E_INFO("%s COMPILED ON: %s, AT: %s\n\n", argvv[0], __DATE__, __TIME__);
-    E_INFO("_TIME_ %d\n\n",__TIME__);
 
     if (cmd_ln_str_r(config, "-infile") != NULL) {
         recognize_from_file();
